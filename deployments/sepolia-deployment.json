@@ -1,0 +1,22 @@
+{
+  "network": "sepolia",
+  "chainId": "11155111",
+  "deployer": "0x363711820c2caef29D8469de538695935d73fa7B",
+  "contracts": {
+    "PokemonCard1155": {
+      "address": "0xEB02Ed9A7A0D81b443a04375483F33a879d9a626",
+      "args": [
+        "ipfs://bafybeihfoywwwh7ng4ltgfhsrl4ic6j3awgk4xyt5jykpob7yqwtzmu3ry/",
+        50
+      ]
+    },
+    "TradeContract": {
+      "address": "0xC3F615BD9B22b600A8C4Aebc8fBD7f0B732Dc4f8",
+      "args": [
+        "0xEB02Ed9A7A0D81b443a04375483F33a879d9a626",
+        "0x363711820c2caef29D8469de538695935d73fa7B"
+      ]
+    }
+  },
+  "deployedAt": "2025-08-19T03:56:13.062Z"
+}

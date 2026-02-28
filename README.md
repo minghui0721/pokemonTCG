@@ -1,0 +1,199 @@
+# 🎮 PokeChain – A Pokémon TCG Blockchain Game
+
+PokeChain is a decentralized application (DApp) that brings the Pokémon Trading Card Game (TCG) to the blockchain. Developed for the CT124-3-3-BCD Group Assignment, this project demonstrates a secure and transparent card ownership and battle system using smart contracts on a local blockchain network.
+
+<img width="1901" height="1079" alt="landing-page" src="https://github.com/user-attachments/assets/a29abdcd-fcb0-4fff-ac54-84d8c8b9d0a4" />
+<img width="1919" height="1079" alt="login" src="https://github.com/user-attachments/assets/3e53ab0e-5e2c-4304-a8eb-a53c79a8acc0" />
+<img width="1898" height="1079" alt="home-page" src="https://github.com/user-attachments/assets/23f7791a-6a22-43af-b40f-72e6b4a4f69c" />
+<img width="1584" height="843" alt="open-pack" src="https://github.com/user-attachments/assets/2b87b21c-45dc-4ca3-8dd2-ff6c2de65e46" />
+<img width="1598" height="875" alt="collection" src="https://github.com/user-attachments/assets/ad4e66e4-af00-4d8f-8fc9-60133af98f2d" />
+<img width="1890" height="897" alt="marketplace" src="https://github.com/user-attachments/assets/5316709b-2834-4e6b-870c-43b36cf1ca32" />
+<img width="1579" height="830" alt="trade-card" src="https://github.com/user-attachments/assets/dcf531ac-b82e-4f87-9b3e-1907362dfb62" />
+<img width="1535" height="775" alt="battle" src="https://github.com/user-attachments/assets/c889dd1a-7260-4df8-81cb-857e4cae568e" />
+<img width="1800" height="854" alt="room" src="https://github.com/user-attachments/assets/6b11d0c4-c44b-4b65-8a40-fc6e3da9630a" />
+<img width="1917" height="1079" alt="battle-arena" src="https://github.com/user-attachments/assets/a1327ad5-d76f-4e30-a6aa-6bd97ec29c5c" />
+<img width="1612" height="1010" alt="leaderboard" src="https://github.com/user-attachments/assets/158a153e-f5cf-4945-8058-9545667c3c43" />
+<img width="1568" height="1005" alt="gems" src="https://github.com/user-attachments/assets/cc953aa2-2345-4e06-8dc2-2bcbc6e5371f" />
+<img width="1661" height="1054" alt="merchandise" src="https://github.com/user-attachments/assets/e0fb53b3-8682-421a-a23b-a0afb0684b2a" />
+<img width="1895" height="1076" alt="admin" src="https://github.com/user-attachments/assets/f059c73f-a30a-481b-b168-124a47012319" />
+
+
+
+---
+
+## 1️⃣ System Setup Instructions
+
+### 🔧 Prerequisites
+
+- Node.js (v16+ recommended)
+- Hardhat (blockchain development environment)
+- MySQL or PostgreSQL (optional for storing metadata)
+- Stripe CLI (for payment webhook simulation)
+- Git
+
+### 📦 Installation Steps
+
+```bash
+# Clone the repository
+git clone https://github.com/your-repo/pokechain.git
+cd pokechain
+
+# Install all dependencies
+npm install
+```
+
+### 🧪 Running the Hardhat Local Blockchain
+
+```bash
+# Start a local blockchain node
+npx hardhat node
+```
+
+### 🚀 Deploy Smart Contracts
+
+```bash
+# In a new terminal window
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### 💻 Start the Frontend Application
+
+```bash
+# Run the Next.js development server
+npm run dev
+```
+
+### 💳 Stripe CLI Setup
+
+1. Download Stripe CLI from [The Stripe Docs logo](https://stripe.com/docs/stripe-cli)
+
+2. Authenticate using your Stripe account:
+   
+   ```bash
+   stripe login
+   ```
+
+3. Start listening for webhooks:
+   
+   ```bash
+   D:\stripe.exe listen --forward-to localhost:3000/api/webhook
+   ```
+
+> The app will usually run on `http://localhost:3000`
+
+---
+
+## 2️⃣ System Features
+
+- 🃏 **Mint Pokémon Cards**
+  
+  - Players can mint Pokémon cards as NFTs (Non-Fungible Tokens).
+
+- 🤝 **Trade & Own Cards**
+  
+  - Every card is a unique token stored on the blockchain and owned by players via their wallet address.
+
+- ⚔️ **Battle Mode (Prototype)**
+  
+  - Simulate card battles using on-chain logic or smart contract rules.
+
+- 🔐 **Blockchain-based Authentication**
+  
+  - Users connect via MetaMask and are identified by their wallet address.
+
+- 💳 **Stripe Payment Integration**
+  
+  - Payments for premium packs or services handled via Stripe API.
+
+- 📚 **Card Metadata**
+  
+  - Optional local database stores card details, stats, and history.
+
+- 💼 **Admin Functions**
+  
+  - Admins can add new card types and control card distribution via the dashboard.
+
+---
+
+## 3️⃣ Workload Matrix
+
+🏆 **GAN MING HUI** - *Project Leader*
+
+**Student ID:** TP065539
+
+**📊 Complete Task List (Click to expand)**
+
+1. Set up **Next.js** frontend framework
+2. Set up **MySQL** database
+3. Developed **landing page**
+4. Developed **login page**
+5. Developed **register page** with **bcrypt hashing** for passwords
+6. Designed the **browser icon (favicon)**
+7. Found and integrated the **official Pokémon API**
+8. Developed the **user homepage**
+9. Implemented **change avatar** functionality
+10. Created the **sidebar navigation**
+11. Developed **open pack** feature and integrated it with the smart contract to mint NFTs using **ERC-1155**
+12. Created the **collection page** to view owned cards
+13. Implemented **buy gems** feature using **Stripe payment gateway**
+14. Integrated **MetaMask** wallet connection
+15. Developed the **admin dashboard**
+16. Created the **admin gem package management** feature
+17. Designed **Hall of Fame** page (UI/UX)
+18. Designed **Merchandise** page (UI/UX)
+
+**Contribution:** **%**
+
+---
+
+### 👨‍💻 **CHEN YU RUI**
+
+**Student ID:** TP073652
+
+**Key Responsibilities:**
+
+- *[To be filled by team member]*
+
+**Contribution:** **10%**
+
+---
+
+### 👨‍💻 **LIM CZE FENG**
+
+**Student ID:** TP073864
+
+**Key Responsibilities:**
+
+- *[To be filled by team member]*
+
+**Contribution:** *35*%
+
+---
+
+### 👨‍💻 **LIM ZHI XIANG**
+
+**Student ID:** TP066076
+
+**Key Responsibilities:**
+
+- *[To be filled by team member]*
+
+**Contribution:** **%
+
+---
+
+## 📌 Notes
+
+- Ensure MetaMask is installed and connected to your local Hardhat network.
+- Stripe CLI must be running for payment features to work.
+- Run `npm install` before starting the project.
+
+---
+
+
+
+
+
+
+
+
