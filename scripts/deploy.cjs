@@ -12,6 +12,7 @@ function mustEndWithSlash(uri) {
 async function main() {
   console.log('🚀 Starting Pokemon Card deployment...');
 
+  console.log('--- DB Check ---');
   const pokemonListPath = path.join(
     __dirname,
     '../src/lib/data/pokemon-list.json'
@@ -25,8 +26,11 @@ async function main() {
   const maxPokemonId = pokemonList.length;
   console.log(`🎯 Found ${maxPokemonId} Pokemon in the list`);
 
+  console.log('--- Network Check ---');
   const network = await ethers.provider.getNetwork();
+  console.log('Network:', network.name, network.chainId.toString());
 
+  console.log('--- Base URI Check ---');
   const baseURI = mustEndWithSlash(
     process.env.NEXT_PUBLIC_BASE_URI ||
       'ipfs://bafybeihfoywwwh7ng4ltgfhsrl4ic6j3awgk4xyt5jykpob7yqwtzmu3ry/'
