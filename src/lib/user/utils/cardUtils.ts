@@ -130,8 +130,8 @@ export const getPlayerCardsByRarity = async (
   }
 
   try {
-    const abi = await import("@/app/lib/pokemonCardABI.json");
-    const pokemonList = await import("@/app/lib/pokemon-list.json");
+    const abi = await import("@/lib/data/pokemonCardABI.json");
+    const pokemonList = await import("@/lib/data/pokemon-list.json");
 
     const provider = new ethers.BrowserProvider(window.ethereum);
     const contractAddress =
@@ -160,7 +160,7 @@ export const getPlayerCardsByRarity = async (
               cardInfo.rarity.toLowerCase().replace(/ /g, "_");
 
             if (cardRarity === requiredRarity) {
-              return {
+              const owned: OwnedCard = {
                 tokenId: cardInfo.tokenId,
                 tcgId: cardInfo.tcgId,
                 name: cardInfo.name,
@@ -169,6 +169,7 @@ export const getPlayerCardsByRarity = async (
                 rarity: cardInfo.rarity,
                 type: cardInfo.type ?? "Unknown",
               };
+              return owned;
             }
           }
         }
@@ -195,7 +196,7 @@ export const getRandomCardByRarity = async (
     );
 
     if (cardsOfRarity.length === 0) {
-      throw new Error(Player has no ${requiredRarity} cards to wager);
+      throw new Error(`Player has no ${requiredRarity} cards to wager`);
     }
 
     // Create array with cards weighted by their amounts
@@ -262,7 +263,7 @@ export const simulateBattleEnd = async (
     // Note: Actual NFT transfer would require smart contract interaction
     // This is a simulation for now - you'll need to implement the actual transfer logic
     console.log(
-      Battle End: ${winnerAddress} wins ${loserCard.name} from ${loserAddress}
+      `Battle End: ${winnerAddress} wins ${loserCard.name} from ${loserAddress}`
     );
 
     return { winnerCard, loserCard };
